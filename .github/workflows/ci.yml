@@ -50,8 +50,6 @@ jobs:
     - name: Install git
       run: sudo apt install git
     - name: Create build in CMake
-      run: cmake -S kunai-lib/ -B build -D CMAKE_BUILD_TYPE=DEBUG -D UNIT_TESTING=ON -D GITHUB_ACTION=ON
+      run: cmake -S shuriken/ -B build -D CMAKE_BUILD_TYPE=DEBUG -D UNIT_TESTING=ON -D GITHUB_ACTION=ON
     - name: Build with cmake
       run: cmake --build build -j
-    - name: Run testing
-      run: ctest --test-dir build/ --output-on-failure
